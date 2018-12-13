@@ -1,0 +1,8 @@
+INDEX VERSION 1.130+/mnt/B442FDDE42FDA570/Users/Luismi/Documents/PERSONALES/Cursos/Nueva Serie Spring/Spring Core/workspace/.metadata/.plugins/org.eclipse.jdt.core
+2413471199.index
+2447583545.index
+2952303461.index
+1771387879.index
+1155541597.index
+779767627.index
+904633067.index

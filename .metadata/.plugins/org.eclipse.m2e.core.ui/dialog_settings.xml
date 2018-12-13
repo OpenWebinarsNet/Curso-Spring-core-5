@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="com.openwebinars"/>
+			<item value="com.openwebinars.spring"/>
+		</list>
+		<list key="name">
+			<item value="MovieAdvisor"/>
+			<item value="PrimerEjemplo"/>
+			<item value="UsoDePerfiles"/>
+			<item value="UsoDeProperties"/>
+			<item value="19-MovieAdvisor"/>
+			<item value="18.2-Value"/>
+			<item value="17-JavaConfig "/>
+			<item value="12-Anotaciones"/>
+			<item value="11-Lifecycle"/>
+		</list>
+		<list key="artifactId">
+			<item value="MovieAdvisor"/>
+			<item value="PrimerEjemplo"/>
+			<item value="UsoDePerfiles"/>
+			<item value="UsoDeProperties"/>
+			<item value="19-MovieAdvisor"/>
+			<item value="18.2-Value"/>
+			<item value="17-JavaConfig"/>
+			<item value="12-Anotaciones"/>
+			<item value="11-Lifecycle"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="issueManagementUrl">
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item value="480" key="width"/>
+		<item value="563" key="x"/>
+		<item value="75" key="y"/>
+		<item value="584" key="height"/>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item value="All Catalogs" key="catalog"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="/mnt/B442FDDE42FDA570/Users/Luismi/Documents/PERSONALES/Cursos/Nueva Serie Spring/Spring Core/workspace/05-ContenedorIoC"/>
+			<item value="/mnt/B442FDDE42FDA570/Users/Luismi/Documents/PERSONALES/Cursos/Nueva Serie Spring/Spring Core/workspace/UsoDePropertiesJavaConfig"/>
+			<item value="/mnt/B442FDDE42FDA570/Users/Luismi/Documents/PERSONALES/Cursos/Nueva Serie Spring/Spring Core/workspace/TSVFilmProccesor/imdb_data.csv"/>
+			<item value="/mnt/B442FDDE42FDA570/Users/Luismi/Documents/PERSONALES/Cursos/Nueva Serie Spring/Spring Core/workspace/17.2-JavaConfigScan"/>
+			<item value="/mnt/B442FDDE42FDA570/Users/Luismi/Documents/PERSONALES/Cursos/Nueva Serie Spring/Spring Core/workspace/16.2-Estereotipos/src/main/resources/beans.xml"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

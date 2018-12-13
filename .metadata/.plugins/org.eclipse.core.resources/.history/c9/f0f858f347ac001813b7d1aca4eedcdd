@@ -1,0 +1,16 @@
+package com.openwebinars.movieadvisor.model;
+
+import java.util.List;
+
+public class Film {
+	
+	private long id;
+	private String title;
+	private String year;
+	private List<String> genres;
+	
+	public Film() {}
+	
+	
+
+}

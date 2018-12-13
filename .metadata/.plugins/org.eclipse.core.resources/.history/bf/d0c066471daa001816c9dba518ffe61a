@@ -1,0 +1,1 @@
+Sintaxis: java -jar movieadvisor.jar -g genero1,genero2,genero3 -t título -y año -b desde,hasta

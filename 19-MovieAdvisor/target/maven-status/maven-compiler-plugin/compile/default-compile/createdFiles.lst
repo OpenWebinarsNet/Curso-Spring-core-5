@@ -1,0 +1,10 @@
+com/openwebinars/movieadvisor/dao/UtilFilmFileReader.class
+com/openwebinars/movieadvisor/dao/FilmDao.class
+com/openwebinars/movieadvisor/model/Film.class
+com/openwebinars/movieadvisor/service/FilmService.class
+com/openwebinars/movieadvisor/config/AppConfig.class
+com/openwebinars/movieadvisor/MovieAdvisorRunApp.class
+com/openwebinars/movieadvisor/dao/FilmDaoImplMemory.class
+com/openwebinars/movieadvisor/MovieAdvisorApp.class
+com/openwebinars/movieadvisor/MovieAdvisorHelp.class
+com/openwebinars/movieadvisor/service/FilmService$QueryBuilder.class

@@ -1,0 +1,114 @@
+package com.openwebinars.movieadvisor.service;
+
+import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.openwebinars.movieadvisor.dao.FilmDao;
+import com.openwebinars.movieadvisor.model.Film;
+
+@Service
+public class FilmService {
+
+	@Autowired
+	FilmDao filmDao;
+
+	public Collection<String> findAllGenres() {
+		List<String> result = null;
+
+		// @formatter:off
+		result = filmDao.findAll()
+				.stream()
+				.map(f -> f.getGenres())
+				.flatMap(lista -> lista.stream())
+				.distinct()
+				.sorted()
+				.collect(Collectors.toList());
+
+		// @formatter:on
+
+		return result;
+	}
+
+	public Collection<Film> findByAnyGenre(String... genres) {
+
+		return new FilmService.QueryBuilder().anyGenre(genres).exec();
+
+	}
+
+	public Collection<Film> findByAllGenres(String... genres) {
+		return new FilmService.QueryBuilder().allGenres(genres).exec();
+	}
+
+	public Collection<Film> findByYear(String year) {
+		return new FilmService.QueryBuilder().year(year).exec();
+	}
+
+	public Collection<Film> findBetweenYears(String from, String to) {
+		return new FilmService.QueryBuilder().betweenYears(from, to).exec();
+	}
+
+	public Collection<Film> findByTitleContains(String title) {
+		return new FilmService.QueryBuilder().titleContains(title).exec();
+	}
+
+	public static class QueryBuilder {
+
+		@Autowired
+		FilmDao dao;
+
+		private Stream<Film> stream;
+
+		/*public QueryBuilder() {
+			stream = dao.findAll().stream();
+		}*/
+		
+		public QueryBuilder initQueryBuilder() {
+			stream = dao.findAll().stream();
+			return this;
+		}
+
+		public Collection<Film> exec() {
+			return stream.collect(Collectors.toList());
+		}
+
+		public QueryBuilder anyGenre(String... genres) {
+			stream.filter(film -> Arrays.stream(genres).anyMatch(film.getGenres()::contains));
+			return this;
+		}
+
+		public QueryBuilder allGenres(String... genres) {
+			stream.filter(film -> Arrays.stream(genres).allMatch(film.getGenres()::contains));
+			return this;
+		}
+
+		public QueryBuilder year(String year) {
+			stream.filter(film -> film.getYear().equalsIgnoreCase(year));
+			return this;
+		}
+
+		public QueryBuilder betweenYears(String from, String to) {
+			stream.filter(film -> {
+				LocalDate fromYear = LocalDate.of(Integer.parseInt(from), 1, 1);
+				LocalDate toYear = LocalDate.of(Integer.parseInt(to), 1, 3);
+				LocalDate filmYear = LocalDate.of(Integer.parseInt(film.getYear()), 1, 2);
+
+				return filmYear.isAfter(fromYear) && filmYear.isBefore(toYear);
+			});
+			return this;
+		}
+
+		public QueryBuilder titleContains(String title) {
+			stream.filter(film -> film.getTitle().toLowerCase().contains(title.toLowerCase()));
+			return this;
+		}
+
+	}
+
+}

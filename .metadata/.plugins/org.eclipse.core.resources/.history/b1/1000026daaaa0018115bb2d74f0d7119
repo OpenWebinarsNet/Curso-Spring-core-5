@@ -1,0 +1,67 @@
+package com.openwebinars.movieadvisor.service;
+
+import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.openwebinars.movieadvisor.dao.FilmDao;
+import com.openwebinars.movieadvisor.model.Film;
+import com.openwebinars.movieadvisor.service.FilmService.QueryBuilder;
+
+@Service
+public class FilmQueryService {
+	
+	@Autowired
+	FilmDao dao;
+
+	private Stream<Film> stream;
+
+	
+	@PostConstruct
+	public void init() {
+		stream = dao.findAll().stream();
+	}
+
+	public Collection<Film> exec() {
+		return stream.collect(Collectors.toList());
+	}
+
+	public FilmQueryService anyGenre(String... genres) {
+		stream.filter(film -> Arrays.stream(genres).anyMatch(film.getGenres()::contains));
+		return this;
+	}
+
+	public FilmQueryService allGenres(String... genres) {
+		stream.filter(film -> Arrays.stream(genres).allMatch(film.getGenres()::contains));
+		return this;
+	}
+
+	public FilmQueryService year(String year) {
+		stream.filter(film -> film.getYear().equalsIgnoreCase(year));
+		return this;
+	}
+
+	public FilmQueryService betweenYears(String from, String to) {
+		stream.filter(film -> {
+			LocalDate fromYear = LocalDate.of(Integer.parseInt(from), 1, 1);
+			LocalDate toYear = LocalDate.of(Integer.parseInt(to), 1, 3);
+			LocalDate filmYear = LocalDate.of(Integer.parseInt(film.getYear()), 1, 2);
+
+			return filmYear.isAfter(fromYear) && filmYear.isBefore(toYear);
+		});
+		return this;
+	}
+
+	public FilmQueryService titleContains(String title) {
+		stream.filter(film -> film.getTitle().toLowerCase().contains(title.toLowerCase()));
+		return this;
+	}
+
+}

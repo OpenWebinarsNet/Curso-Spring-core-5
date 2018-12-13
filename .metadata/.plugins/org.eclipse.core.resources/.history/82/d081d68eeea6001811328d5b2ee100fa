@@ -1,0 +1,9 @@
+package com.openwebinars.javaconfig;
+
+import org.springframework.context.annotation.ComponentScan;
+
+@Configuration
+@ComponentScan(basePackages=)
+public class AppConfig {
+
+}

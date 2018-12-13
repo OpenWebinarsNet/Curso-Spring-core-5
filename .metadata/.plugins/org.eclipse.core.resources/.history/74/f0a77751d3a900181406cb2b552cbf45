@@ -1,0 +1,12 @@
+package com.openwebinars.movieadvisor.config;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+
+@Configuration
+@ComponentScan(basePackages="com.openwebinars.movieadvisor")
+@PropertySource("classpath:/movieadvisor.properties")
+public class AppConfig {
+
+}

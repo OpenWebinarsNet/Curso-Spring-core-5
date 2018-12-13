@@ -1,0 +1,51 @@
+package com.openwebinars.movieadvisor.dao;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.openwebinars.movieadvisor.config.AppConfig;
+import com.openwebinars.movieadvisor.model.Film;
+
+@Repository
+public class FilmDaoImplMemory implements FilmDao {
+	
+	public List<Film> peliculas = new ArrayList<>();
+	
+	@Autowired
+	private AppConfig appConfig;
+	
+	public void init() {
+		peliculas = UtilFilmFileReader.readFile(appConfig.getFile(), appConfig.getSeparator(), appConfig.getListSeparator());
+	}
+	
+
+	public Film findById(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Collection<Film> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void insert(Film film) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void edit(Film film) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void delete(long id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

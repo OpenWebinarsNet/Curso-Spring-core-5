@@ -1,0 +1,48 @@
+package com.openwebinars.movieadvisor.dao;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+
+import com.openwebinars.movieadvisor.model.Film;
+
+public class FilmDaoImplMemory implements FilmDao {
+	
+	public List<Film> peliculas = new ArrayList<>();
+	
+	@PostConstruct
+	public void init() {
+		peliculas = UtilFilmFileReader.readFile("");
+	}
+
+	public Film findById(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Collection<Film> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void insert(Film film) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void edit(Film film) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void delete(long id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

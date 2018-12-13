@@ -1,0 +1,43 @@
+package com.openwebinars.movieadvisor;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.openwebinars.movieadvisor.service.FilmService;
+
+@Component
+public class MovieAdvisorRunApp {
+
+	@Autowired
+	FilmService filmService;
+
+	@Autowired
+	MovieAdvisorHelp help;
+
+	public void run(String[] args) {
+
+		System.out.println(args.length);
+
+		if (args.length < 1) {
+			System.out.println("Error de sintaxis");
+			System.out.println(help.getHelp());
+		} else if (args.length == 1) {
+			switch (args[0].toLowerCase()) {
+			case "-lg":
+				filmService.findAllGenres().forEach(System.out::println);
+				break;
+			case "-h":
+				System.out.println(help.getHelp());
+				break;
+			default:
+				System.out.println("Error de sintaxis");
+				System.out.println(help.getHelp());
+
+			}
+		} else if (args.length % 2 != 0) {
+
+		}
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.openwebinars.values;
+
+public class AppConfig {
+
+}

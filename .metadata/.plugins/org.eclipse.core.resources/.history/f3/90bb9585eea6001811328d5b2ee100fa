@@ -1,0 +1,9 @@
+package com.openwebinars.stereotypes;
+
+import org.springframework.context.annotation.ComponentScan;
+
+@Configuration
+@ComponentScan(basePackages=)
+public class AppConfig {
+
+}

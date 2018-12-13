@@ -1,0 +1,120 @@
+package com.openwebinars.movieadvisor.service;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.openwebinars.movieadvisor.dao.FilmDao;
+import com.openwebinars.movieadvisor.model.Film;
+
+@Service
+public class FilmService {
+
+	@Autowired
+	FilmDao filmDao;
+
+	public Collection<Film> findByAnyGenre(String... genres) {
+
+		// @formatter:off
+		final Set<String> generosABuscar = Arrays.stream(genres).distinct().collect(Collectors.toSet());
+
+		// @formatter:on
+
+		List<Film> result = null;
+
+		// @formatter:off
+		result = filmDao.findAll().stream().filter(film -> generosABuscar.stream().anyMatch(film.getGenres()::contains))
+				.collect(Collectors.toList());
+
+		// @formatter:on
+
+		return result;
+	}
+
+	public Collection<Film> findByAllGenres(String... genres) {
+
+		// @formatter:off
+		final Set<String> generosABuscar = Arrays.stream(genres).distinct().collect(Collectors.toSet());
+
+		// @formatter:on
+
+		List<Film> result = null;
+
+		// @formatter:off
+		result = filmDao.findAll().stream().filter(film -> generosABuscar.stream().allMatch(film.getGenres()::contains))
+				.collect(Collectors.toList());
+
+		// @formatter:on
+		return result;
+	}
+
+	public Collection<String> findAllGenres() {
+		List<String> result = null;
+
+		// @formatter:off
+		result = filmDao.findAll().stream().map(f -> f.getGenres()).flatMap(lista -> lista.stream()).distinct().sorted()
+				.collect(Collectors.toList());
+
+		// @formatter:on
+
+		return result;
+	}
+
+	public Collection<Film> findByYear(String year) {
+		List<Film> result = null;
+
+		// @formatter:off
+		result = filmDao.findAll().stream().filter(film -> film.getYear().equalsIgnoreCase(year))
+				.collect(Collectors.toList());
+		// @formatter:on
+
+		return result;
+	}
+
+	public Collection<Film> findByTitleContains(String title) {
+		List<Film> result = null;
+
+		// @formatter:off
+		result = filmDao.findAll().stream().filter(film -> film.getTitle().toLowerCase().contains(title.toLowerCase()))
+				.collect(Collectors.toList());
+		// @formatter:on
+
+		return result;
+	}
+
+	public static class QueryBuilder {
+
+		@Autowired
+		FilmDao dao;
+
+		private Stream<Film> stream;
+
+		public QueryBuilder() {
+			stream = dao.findAll().stream();
+		}
+
+		public Collection<Film> exec() {
+			return stream.collect(Collectors.toList());
+		}
+
+		public QueryBuilder byAnyGenre(String... genres) {
+
+			stream.filter(film -> Arrays.stream(genres).anyMatch(film.getGenres()::contains));
+
+			return this;
+		}
+
+		public QueryBuilder byAllGenres(String... genres) {
+			stream.filter(film -> Arrays.stream(genres).anyMatch(film.getGenres()::contains));
+			return this;
+		}
+
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.openwebinars.javaconfig;
+
+public class Snippet {
+	@Configuration
+	A nivel de clase
+	Indica que una clase va a definir uno o más @Bean
+	  @Bean.
+	A nivel de método
+	Equivalente a <bean … />
+	
+}
+

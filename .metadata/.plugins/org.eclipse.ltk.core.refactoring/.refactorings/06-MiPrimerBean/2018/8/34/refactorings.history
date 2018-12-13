@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Saludator.java&apos; to &apos;17-JavaConfig/src/main/java/com.openwebinars.javaconfig&apos;&#x0A;- Original project: &apos;06-MiPrimerBean&apos;&#x0A;- Destination element: &apos;17-JavaConfig/src/main/java/com.openwebinars.javaconfig&apos;&#x0A;- Original element: &apos;com.openwebinars.beans.Saludator.java&apos;" description="Copy compilation unit" destination="=17-JavaConfig/src\/main\/java&lt;com.openwebinars.javaconfig" element1="/src\/main\/java&lt;com.openwebinars.beans{Saludator.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1535039602538" units="1" version="1.0"/>
+</session>

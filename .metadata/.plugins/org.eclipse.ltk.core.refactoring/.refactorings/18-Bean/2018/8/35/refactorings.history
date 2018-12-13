@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;App.java&apos; to &apos;18.2-Value/src/main/java/com.openwebinars.values&apos;&#x0A;- Original project: &apos;18-Bean&apos;&#x0A;- Destination element: &apos;18.2-Value/src/main/java/com.openwebinars.values&apos;&#x0A;- Original element: &apos;com.openwebinars.javaconfig.App.java&apos;" description="Copy compilation unit" destination="=18.2-Value/src\/main\/java&lt;com.openwebinars.values" element1="/src\/main\/java&lt;com.openwebinars.javaconfig{App.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1535355916701" units="1" version="1.0"/>
+</session>

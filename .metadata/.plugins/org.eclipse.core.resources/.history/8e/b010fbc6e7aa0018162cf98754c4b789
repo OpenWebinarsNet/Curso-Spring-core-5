@@ -1,0 +1,32 @@
+package com.openwebinars.spring.profiles;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+
+@Configuration
+public class AppConfig {
+
+	@Bean
+	@Profile("dev")
+	public DatabaseConfig dbConfigDevelopment() {
+		DatabaseConfig dbConfig = new DatabaseConfig();
+		dbConfig.setJdbcUrl("url de desarrollo");
+		dbConfig.setUsername("sa");
+		dbConfig.setPassword("");
+		return dbConfig;
+	}
+	
+	@Bean
+	@Profile("prod")
+	public DatabaseConfig dbConfigProduction() {
+		DatabaseConfig dbConfig = new DatabaseConfig();
+		dbConfig.setJdbcUrl("url de producto");
+		dbConfig.setUsername("dba");
+		dbConfig.setPassword("1234");
+		return dbConfig;		
+	}
+	
+	
+	
+}

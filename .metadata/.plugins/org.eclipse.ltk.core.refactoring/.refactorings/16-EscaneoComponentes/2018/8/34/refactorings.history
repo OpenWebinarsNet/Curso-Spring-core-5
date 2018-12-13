@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.openwebinars.annotation&apos; to &apos;com.openwebinars.stereotypes&apos;&#x0A;- Original project: &apos;16-EscaneoComponentes&apos;&#x0A;- Original element: &apos;16-EscaneoComponentes/src/main/java/com.openwebinars.annotation&apos;&#x0A;- Renamed element: &apos;16-EscaneoComponentes/src/main/java/com.openwebinars.stereotypes&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.openwebinars.annotation&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;com.openwebinars.annotation" name="com.openwebinars.stereotypes" qualified="false" references="true" stamp="1535018285390" textual="false" version="1.0"/>
+</session>

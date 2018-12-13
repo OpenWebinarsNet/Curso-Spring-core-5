@@ -1,0 +1,14 @@
+package com.openwebinars.spring.profiles;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class DatabaseConfig {
+	
+	private String jdbcUrl;
+	private String username;
+	private String password;
+	
+	
+
+}

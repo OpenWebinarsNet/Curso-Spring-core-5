@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+					    http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context 
+						http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	<!-- Esta anotación ya no es necesaria. La anotación de escaneo de componentes 
+		incluye su funcionamiento -->
+	<!--<context:annotation-config /> -->
+
+	<context:component-scan
+		base-package="com.openwebinars.stereotypes" />
+
+	<!-- <bean id="peliculaDaoMemory" class="com.openwebinars.annotation.PeliculaDaoImplMemory" 
+		/> <bean id="peliculaService" class="com.openwebinars.annotation.PeliculaService" 
+		/> <bean id="catalogoClasicas" class="com.openwebinars.annotation.CatalogoPeliculasClasicas" 
+		/> <bean id="catalogoActuales" class="com.openwebinars.annotation.CatalogoPeliculasActuales" 
+		primary="true" /> -->
+
+
+</beans>

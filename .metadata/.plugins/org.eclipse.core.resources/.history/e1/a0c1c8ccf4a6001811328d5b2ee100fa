@@ -1,0 +1,14 @@
+package com.openwebinars.javaconfig;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class AppConfig {
+	
+	@Bean
+	@Primary
+	public CatalogoPeliculas catalogoActuales() {
+		return new CatalogoPeliculasActuales();
+	}
+
+}

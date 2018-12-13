@@ -1,0 +1,26 @@
+package com.openwebinars.movieadvisor;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Component;
+
+@Component
+@Lazy
+public class MovieAdvisorHelp {
+	
+	private String help;
+	
+	@PostConstruct
+	public void init() {
+		help = Files.readAllLines(Paths.get("ayuda.txt"));
+	}
+	
+	public String getHelp() {
+		return help;
+	}
+
+}

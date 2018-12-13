@@ -1,0 +1,11 @@
+package com.openwebinars.javaconfig;
+
+
+public class App {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

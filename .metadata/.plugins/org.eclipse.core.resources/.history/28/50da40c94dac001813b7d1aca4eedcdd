@@ -1,0 +1,5 @@
+package com.openwebinars.movieadvisor.service;
+
+public class FilmService {
+
+}

@@ -1,0 +1,45 @@
+package com.openwebinars.movieadvisor.service;
+
+import java.util.Collection;
+
+import com.openwebinars.movieadvisor.model.Film;
+
+public class FilmQueryServiceImpl implements FilmQueryService {
+
+	@Override
+	public Collection<Film> exec() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public FilmQueryService anyGenre(String... genres) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public FilmQueryService allGenres(String... genres) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public FilmQueryService year(String year) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public FilmQueryService betweenYears(String from, String to) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public FilmQueryService titleContains(String title) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
